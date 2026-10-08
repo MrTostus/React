@@ -11,7 +11,7 @@ function TodoForm({ setTodos }) {
             />
             <button onClick={() => {
                 setTodos(prevTodos => [...prevTodos, value]);
-                setValue = ('');
+                setValue('');
             }}> 
             Dodaj
             </button>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 import Header from './components/header/Header.jsx'
 import './App.css'
 import UserInfo from './components/UserInfo/UserInfo.jsx'
