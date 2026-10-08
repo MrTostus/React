@@ -1,10 +1,17 @@
+import { useState  } from "react";
+
 function TodoForm({ setTodos }) {
+    const [value, setValue] = useState('')
     return (
         <div>
-            <input placeholder="Wpisz zadanie..." id= 'todo-input'/>
+            <input 
+                placeholder="Wpisz zadanie..." 
+                value={value} 
+                onChange={e => setValue(e.target.value)}
+            />
             <button onClick={() => {
                 setTodos(prevTodos => [...prevTodos, value]);
-                value = ' ';
+                setValue = ('');
             }}> 
             Dodaj
             </button>

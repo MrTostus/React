@@ -1,17 +1,14 @@
-import TodoItem from '../TodoItem/TodoItem.jsx'
-import { useState } from 'react';
-function TodoList( { todos }) {
+import TodoItem from '../TodoItem/TodoItem';
 
-    console.log(todos); 
-    return (
-        <section>
-            <TodoItem text="Nauczyć się Reacta" />
-            <TodoItem text="Zrobić zadanie domowe" />
-            <TodoItem text="Powtórzyć JavaScript" />
-            {todos.map((el, index) => (
-                <todoItem key={index} text={el} />
-            ))}
-        </section>
-    );
+const TodoList = ({ todos })  => {
+  return (
+    <section>
+      {todos.length > 0
+        ? todos.map((el, index) => <TodoItem key={index} text={el} />)
+        : 'Dodaj zadania aby zobaczyć je na liście'}
+
+      {/* {isNotificationShown && toast} */}
+    </section>
+  );
 }
 export default TodoList;

@@ -9,17 +9,21 @@ function App() {
   const name = "Janusz";
   const age = 20;
   
-      const [todos, setTodos] = useState([
-        'Nauczyć się Reacta',
-        'Zrobić zadanie domowe',
-        'Powtórzyć JavaScript'
-    ]);
+    const [todos, setTodos] = useState([]);
     
+    useEffect(() => {
+      setTodos([
+        'nauczyć się Reacta',
+        'Zrobić zadanie domowe',
+        'Powtórzyć JavaScript',
+      ]);
+    }, []);
+
   return (
     <>
     <Header/>
     <UserInfo name={name} age={age}/>
-      <TodoForm setTodos={setTodosS}/>
+      <TodoForm setTodos={setTodos}/>
       <TodoList todos = {todos}/>
     </>
   );
